@@ -118,6 +118,13 @@ USService usrvice = new USService();
 	    
 	    System.out.println("total marks"+"  "+uTest.getTestTotalMarks());
 	    
+	    
+	    System.out.println("******************************************************");
+	    
+	    System.out.println("ThankYou For Taking test ");
+	    
+	    System.out.println("HAve A Nice Day");
+	    
 	    return uTest;
 	    
 }

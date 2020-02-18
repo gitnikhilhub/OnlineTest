@@ -8,6 +8,7 @@ import java.math.BigInteger;
 import org.junit.jupiter.api.Test;
 
 import com.cap.Service.USService;
+import com.cap.Service.Validation;
 import com.cap.Util.QuestionCollection;
 import com.cap.bean.Question;
 
@@ -31,7 +32,8 @@ class ServiceTest {
 	@Test
 	
 	void test2()
-	{
+	{	boolean b=Validation.validatedata("1001","1001");
+		assertTrue(b);
 		
 	}
 		
