@@ -6,77 +6,78 @@ import java.util.Map;
 import java.util.Scanner;
 import java.util.Set;
 
-import com.cap.Service.QSService;
-import com.cap.Service.USService;
+import com.cap.Service.UserService;
 import com.cap.Service.Validation;
 import com.cap.Util.QuestionCollection;
 import com.cap.Util.TestCollection;
 import com.cap.bean.Question;
 import com.cap.bean.Test;
 import com.cap.bean.User;
+import com.cap.exception.ExceptionJava;
 
 public class MainClient {
 	public static Test calculateTestMarks()
 	{
-USService usrvice = new USService();
+		UserService uService = new UserService();  //creating object of user service class
 		
 	    double totalmarks = 0.0;
 	    double total =0.0;
-	    System.out.println("Welcome to Online Test Management System");
-		System.out.println("................................................");
-		Scanner s = new Scanner(System.in);
+	    System.out.println("*********************Welcome to Online Test Management System*************************");
+		System.out.println("........................................................................................");
+		Scanner scanner = new Scanner(System.in);
 		System.out.println("enter user id");
-		long id = s.nextLong();
+		long id = scanner.nextLong();
 		
-		int x=0;
-		while(x<3)
+		boolean val = true;
+		while(val)
 		{
-		String st=String.valueOf(id);
-		boolean b1 = Validation.validatedata1(st,Validation.pattern1);
+		String string=String.valueOf(id);
+		boolean b1 = Validation.validatedata1(string,Validation.pattern1);  //Applying Validation On User Id
 		if(b1 == true)
 		{
 			System.out.println("valid id");
+			val = false;
 			break;
 		}
 		else
 		{
-			x++;
+			
 			System.out.println("inValid id");
 			System.out.println("enter again");
-			id=s.nextLong();
+			id=scanner.nextLong();
 		}
 		
 		}
 		
 		System.out.println("Enter user password");
-		String pass=s.next();
+		String pass=scanner.next();
 		
-		int i=0;
-		while(i<3)
+		boolean val1=true;
+		while(val1)
 		{
-			boolean c=Validation.validatedata(pass, Validation.pattern);
+			boolean c=Validation.validatedata(pass, Validation.pattern);   //Applying VAlidation on User Password
 		if(c==true)
 		{
-			System.out.println("correct value");
+			System.out.println("");
+			val1=false;
 			break;
 		}
 		else
 		{
-			i++;
+			
 			System.out.println("try again");
-			 pass=s.next();
+			 pass=scanner.next();
 		}
 		}
 		
        
 
-	    User user = usrvice.getUser(id);
-   //System.out.println(user);
+	    User user = uService.getUser(id);   				//getting user from from getuser method which is in user service class
+
 	    System.out.println("User name "+" "+user.getUserName());
 	    
-	    Test uTest = user.getUserTest();
 	    
-	  
+	    Test uTest = user.getUserTest();                    //getting assigned test to the user
 	    
 	    System.out.println("Test type"+":"+uTest.getTestTitle());
 	    
@@ -86,24 +87,32 @@ USService usrvice = new USService();
 	    
 	    
 	    System.out.println("Start Time"+":"+uTest.getStartTime());
-	    //System.out.println(uTest);
+	  
 	    
 	    Set<Question> set = uTest.getTestQuestions();
 	    
-	    //System.out.println(set);
-	    
+
 	    for(Question question : set)
 	    {
 	    	
-	    	System.out.println("Marks scored in the question "+" "+question.getQuestionTitle()+" is "+question.getMarksScored());
+	    	System.out.println("Marks scored in the question "+" "+question.getQuestionTitle()+"   "+" IS: "+question.getMarksScored());
 	    	
-	    	System.out.println(".......................");
+	    	System.out.println("***************************************************************************************");
+	    	
+	    	System.out.println("choosen option"+" :"+question.getChosenAnswer());
+	    	
+	    	System.out.println("****************************************************************************************");
 	    	 
-	    	System.out.println("correct option"+" "+question.getQuestionAnswer());
+	    	System.out.println("correct option"+" :"+question.getQuestionAnswer());
+	    	
+	    	
+	    	System.out.println("*****************************************************************************************");
 	    	
 	    	totalmarks = totalmarks+question.getMarksScored().doubleValue();
 	    	
-	    	System.out.println("total marks in the question"  +"   "+question.getQuestionTitle()+" is "+question.getQuestionMarks());
+	    	System.out.println("total marks in the question"  +"   "+question.getQuestionTitle()+"  "+" IS: "+question.getQuestionMarks());
+	    	
+	    	System.out.println("*****************************************************************************************");
 	    	
 	    	
 	    	total=total+question.getQuestionMarks().doubleValue();
@@ -114,12 +123,23 @@ USService usrvice = new USService();
 	    
 	    System.out.println("marks Scored"+" "+uTest.getTestMarksScored());
 	    
+	    
+	    try
+	    {
+	    	if(uTest.getTestMarksScored().doubleValue() <40)                          //applying exception
+	    		throw new ExceptionJava("you are fail");
+	    }
+	    catch(ExceptionJava exe)
+	    {
+	    	System.out.println(exe.getMessage());
+	    }
+	    
 	    uTest.setTestTotalMarks(BigDecimal.valueOf(total));
 	    
 	    System.out.println("total marks"+"  "+uTest.getTestTotalMarks());
 	    
 	    
-	    System.out.println("******************************************************");
+	    System.out.println("**********************************************************************************************");
 	    
 	    System.out.println("ThankYou For Taking test ");
 	    
@@ -129,14 +149,8 @@ USService usrvice = new USService();
 	    
 }
 
-
-
-
-
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		
-
-	calculateTestMarks();
+		calculateTestMarks();                           //calling Method
 	}
 }

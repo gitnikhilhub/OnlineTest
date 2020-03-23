@@ -13,16 +13,15 @@ public class UserCollection {
 	
 	static TestCollection tColl = new TestCollection();
 	
-	static Map<Integer, Test> map = tColl.ShowTest();
+	static Map<Integer, Test> map = tColl.ShowTest();  
+	static Test test1 = map.get(1001);                          //creating test1
+
 	
-	static Test test1 = map.get(1001);
 	static Map<Integer, Test> map1 = tColl.ShowTest();
+	static Test test2 = map.get(1002);                         //creating test2
 	
-	static Test test2 = map.get(1002);
-	
-static Map<Integer, Test> map2 = tColl.ShowTest();
-	
-	static Test test3 = map.get(1003);
+	static Map<Integer, Test> map2 = tColl.ShowTest();
+	static Test test3 = map.get(1003);                         //creating test3
 	
 
 	static

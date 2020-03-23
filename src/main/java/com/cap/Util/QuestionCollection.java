@@ -20,12 +20,11 @@ public class QuestionCollection {
 		questionOptions.add("2.Throws exception");
 		questionOptions.add("3.compile time error");
 		questionOptions.add("4. Runs successfully");
-		questions.put(1001, new Question(BigInteger.valueOf(1001),questionOptions,". What would be the behaviour if this() and super() used in a method?",3,BigDecimal.valueOf(30.0),2,BigDecimal.valueOf(0.0)));
+		questions.put(1001, new Question(BigInteger.valueOf(1001),questionOptions,". What would be the behaviour if this() and super() used in a method?",3,BigDecimal.valueOf(30.0),4   ,BigDecimal.valueOf(0.0)));
 	
 	
 		ArrayList<String> questionoption1=new ArrayList<String>();
 		questionoption1.add("1. It can contain return type") ;
-				
 		questionoption1.add("2.any number of parameters ");
 		questionoption1.add("3. It can have any non access modifiers");
 		questionoption1.add("4. Constructor cannot throw an exception");
@@ -33,13 +32,12 @@ public class QuestionCollection {
 		
 		
 		ArrayList<String> questionoption2=new ArrayList<String>();
-		questionoption2.add("1.True");
-		questionoption2.add("2.False  ");
-		questions.put(1003, new Question(BigInteger.valueOf(1003),questionoption2," Abstract class cannot have a constructor.",2,BigDecimal.valueOf(30.0),2,BigDecimal.valueOf(30.0)));
+		questionoption2.add("1.False");
+		questionoption2.add("2.True  ");
+		questions.put(1003, new Question(BigInteger.valueOf(1003),questionoption2," Abstract class cannot have a constructor.",1,BigDecimal.valueOf(30.0),1,BigDecimal.valueOf(30.0)));
 		
 		ArrayList<String> questionoption3=new ArrayList<String>();
 		questionoption3.add("1. It can contain return type") ;
-				
 		questionoption3.add("2.any number of parameters ");
 		questionoption3.add("3. It can have any non access modifiers");
 		questionoption3.add("4. Constructor cannot throw an exception");
@@ -73,7 +71,7 @@ public class QuestionCollection {
 		questionoption7.add("2.list1 = []");
 		questionoption7.add("3. list1 = list([1, 2, 3])" );
 		questionoption7.add("4. all of the mentione);");
-		questions.put(1008, new Question(BigInteger.valueOf(1008),questionoption4,"Which of the following commands will create a list?",4,BigDecimal.valueOf(30.0),4,BigDecimal.valueOf(30.0)));
+		questions.put(1008, new Question(BigInteger.valueOf(1008),questionoption4,"Which of the following commands will create a list?",4,BigDecimal.valueOf(30.0),3,BigDecimal.valueOf(0.0)));
 
 		ArrayList<String> questionoption8=new ArrayList<String>();
 		questionoption8.add("1.1");

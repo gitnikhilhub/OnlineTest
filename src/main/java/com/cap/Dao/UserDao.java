@@ -3,7 +3,7 @@ package com.cap.Dao;
 import com.cap.Util.UserCollection;
 import com.cap.bean.User;
 
-public class UDao implements Uinterface {
+public class UserDao implements Userinterface {
 	UserCollection u=new UserCollection();
 
 	@Override

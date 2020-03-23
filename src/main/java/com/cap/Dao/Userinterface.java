@@ -2,6 +2,6 @@ package com.cap.Dao;
 
 import com.cap.bean.User;
 
-public interface Uinterface {
+public interface Userinterface {
 User getUser(long id);
 }

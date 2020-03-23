@@ -12,6 +12,7 @@ public class Question {
 	private BigDecimal questionMarks;
 	private int chosenAnswer;
 	private BigDecimal marksScored;
+	
 	public BigInteger getQuestionId() {
 		return questionId;
 	}

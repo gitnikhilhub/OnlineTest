@@ -4,13 +4,13 @@ import java.math.BigDecimal;
 import java.util.Scanner;
 import java.util.Set;
 
-import com.cap.Dao.UDao;
+import com.cap.Dao.UserDao;
 import com.cap.bean.Question;
 import com.cap.bean.Test;
 import com.cap.bean.User;
 
-public class USService implements USinterface {
-	UDao u1=new UDao();
+public class UserService implements USinterface {
+	UserDao u1=new UserDao();
 
 	@Override
 	public User getUser(long id) {

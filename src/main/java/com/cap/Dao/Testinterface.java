@@ -4,7 +4,7 @@ import java.math.BigInteger;
 
 import com.cap.bean.Test;
 
-public interface Tinterface {
+public interface Testinterface {
 	
 Test getTest(BigInteger id);
 }

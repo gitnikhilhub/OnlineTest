@@ -5,9 +5,10 @@ import static org.junit.jupiter.api.Assertions.*;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-import com.cap.Service.USService;
+import com.cap.Service.UserService;
 import com.cap.Service.Validation;
 import com.cap.Util.QuestionCollection;
 import com.cap.bean.Question;
@@ -17,7 +18,7 @@ class ServiceTest {
 	@Test
 	void test() {
 		
-		USService u = new USService();
+		UserService u = new UserService();
 		assertFalse(u.getUser(1001).isAdmin());
 		
 		
@@ -36,6 +37,10 @@ class ServiceTest {
 		assertTrue(b);
 		
 	}
-		
-
+	@Test
+	void test3()
+	{
+		boolean b1=Validation.validatedata1("Kapil@118", "Kapil@118");
+		assertTrue(b1);
+	}
 }

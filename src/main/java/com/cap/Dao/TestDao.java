@@ -5,7 +5,7 @@ import java.math.BigInteger;
 import com.cap.Util.TestCollection;
 import com.cap.bean.Test;
 
-public class TDao implements Tinterface {
+public class TestDao implements Testinterface {
 	TestCollection t=new TestCollection();
 
 	@Override
