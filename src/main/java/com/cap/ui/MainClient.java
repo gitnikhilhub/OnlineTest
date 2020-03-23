@@ -6,7 +6,7 @@ import java.util.Map;
 import java.util.Scanner;
 import java.util.Set;
 
-import com.cap.Service.UserService;
+import com.cap.Service.TestService;
 import com.cap.Service.Validation;
 import com.cap.Util.QuestionCollection;
 import com.cap.Util.TestCollection;
@@ -18,7 +18,7 @@ import com.cap.exception.ExceptionJava;
 public class MainClient {
 	public static Test calculateTestMarks()
 	{
-		UserService uService = new UserService();  //creating object of user service class
+		TestService uService = new TestService();  //creating object of user service class
 		
 	    double totalmarks = 0.0;
 	    double total =0.0;

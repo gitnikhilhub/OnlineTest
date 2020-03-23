@@ -8,7 +8,7 @@ import java.math.BigInteger;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-import com.cap.Service.UserService;
+import com.cap.Service.TestService;
 import com.cap.Service.Validation;
 import com.cap.Util.QuestionCollection;
 import com.cap.bean.Question;
@@ -18,7 +18,7 @@ class ServiceTest {
 	@Test
 	void test() {
 		
-		UserService u = new UserService();
+		TestService u = new TestService();
 		assertFalse(u.getUser(1001).isAdmin());
 		
 		
